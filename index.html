@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1769d2">
+  <title>Minha Escola | Juntos por um futuro melhor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#" data-page="inicio" aria-label="Minha Escola - início">
+        <span class="brand-icon">📘</span>
+        <span><strong>Minha Escola</strong><small>Juntos por um futuro melhor</small></span>
+      </a>
+      <nav class="nav-menu" aria-label="Menu principal">
+        <button class="nav-item active" data-page="inicio"><span>⌂</span> Início</button>
+        <button class="nav-item" data-page="infraestrutura"><span>🔧</span> Infraestrutura</button>
+        <button class="nav-item" data-page="futuro"><span>◎</span> Meu Futuro</button>
+        <button class="nav-item" data-page="apoio"><span>♡</span> Direção e Psicólogo</button>
+        <button class="nav-item" data-page="projetos"><span>💡</span> Projetos e eventos</button>
+        <button class="nav-item" data-page="professores"><span>▤</span> Professores</button>
+        <button class="nav-item" data-page="perfil"><span>♙</span> Meu perfil</button>
+      </nav>
+      <div class="sidebar-note"><span>🛡️</span><div><strong>Ambiente escolar</strong><p>Respeito, diálogo e aprendizagem para todos.</p></div></div>
+      <div class="sidebar-foot">Protótipo demonstrativo · v1.0</div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Abrir menu">☰</button>
+        <div class="breadcrumb" id="breadcrumb">Início <span>/</span> Painel do aluno</div>
+        <label class="searchbox"><span>⌕</span><input id="globalSearch" type="search" placeholder="Buscar nesta página..." aria-label="Buscar nesta página"></label>
+        <div class="user-menu"><span class="avatar" id="avatarInitial">A</span><div><strong id="headerName">Aluno visitante</strong><small id="headerRole">Aluno</small></div><button id="profileQuick" title="Abrir perfil">⌄</button></div>
+      </header>
+
+      <div class="content">
+        <section class="page active" id="page-inicio">
+          <div class="hero">
+            <div class="hero-copy"><span class="eyebrow">SUA VOZ. SEU FUTURO. SUA ESCOLA.</span><h1 id="welcomeTitle">Olá, estudante!</h1><p>Um espaço para melhorar sua escola, descobrir seus talentos e construir seu caminho com apoio da comunidade escolar.</p><button class="primary-btn" data-goto="futuro">Descobrir meu futuro <span>→</span></button></div>
+            <div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="book-shape">✦</div><div class="hero-caption">Aprender<br><b>transforma.</b></div></div>
+          </div>
+          <div class="section-heading"><div><h2>O que você quer fazer hoje?</h2><p>Escolha uma área para começar.</p></div></div>
+          <div class="shortcut-grid">
+            <button class="shortcut-card blue" data-goto="infraestrutura"><span class="shortcut-icon">⚠</span><strong>Reportar problema</strong><p>Ajude a melhorar os espaços da escola.</p><span class="card-link">Enviar relato →</span></button>
+            <button class="shortcut-card green" data-goto="futuro"><span class="shortcut-icon">◎</span><strong>Planejar meu futuro</strong><p>Encontre disciplinas e métodos para seus objetivos.</p><span class="card-link">Criar plano →</span></button>
+            <button class="shortcut-card purple" data-goto="apoio"><span class="shortcut-icon">♡</span><strong>Conversar com alguém</strong><p>Solicite uma conversa com a equipe escolar.</p><span class="card-link">Ver atendimentos →</span></button>
+            <button class="shortcut-card orange" data-goto="projetos"><span class="shortcut-icon">✦</span><strong>Compartilhar uma ideia</strong><p>Cadastre um projeto e descubra oportunidades.</p><span class="card-link">Ver projetos →</span></button>
+          </div>
+          <div class="dashboard-grid">
+            <section class="panel"><div class="panel-heading"><div><h2>Relatos recentes</h2><p>Acompanhe os registros da comunidade.</p></div><button class="text-btn" data-goto="infraestrutura">Ver todos →</button></div><div id="homeReports" class="mini-list"></div></section>
+            <section class="panel"><div class="panel-heading"><div><h2>Próximos eventos</h2><p>Oportunidades para participar.</p></div><button class="text-btn" data-goto="projetos">Ver todos →</button></div><div id="homeEvents" class="event-list compact"></div></section>
+          </div>
+          <div class="notice"><span>💙</span><div><strong>Aprender é mais do que tirar notas.</strong><p>Esta plataforma valoriza sua curiosidade, seus projetos, seu progresso e o apoio que você precisa para crescer.</p></div></div>
+        </section>
+
+        <section class="page" id="page-infraestrutura">
+          <div class="page-intro"><span class="eyebrow">PARTICIPAÇÃO ESTUDANTIL</span><h1>Infraestrutura escolar</h1><p>Viu algo que precisa de atenção? Registre o problema para que a equipe responsável possa avaliar.</p></div>
+          <div class="two-col">
+            <form class="panel form-panel" id="reportForm">
+              <h2>Registrar um problema</h2><p class="muted">Preencha os detalhes. Não inclua rostos ou dados pessoais de outras pessoas nas imagens.</p>
+              <label for="reportTitle">Título do relato *</label><input id="reportTitle" required maxlength="100" placeholder="Ex.: Vazamento no banheiro do bloco B">
+              <div class="form-row"><div><label for="reportCategory">Categoria *</label><select id="reportCategory" required><option value="">Selecione</option><option>Água e encanamento</option><option>Carteiras e mobiliário</option><option>Limpeza e conservação</option><option>Iluminação e eletricidade</option><option>Acessibilidade</option><option>Outro</option></select></div><div><label for="reportPlace">Local *</label><input id="reportPlace" required placeholder="Ex.: banheiro do bloco B"></div></div>
+              <label for="reportDescription">O que você identificou? *</label><textarea id="reportDescription" rows="4" required maxlength="1200" placeholder="Descreva o problema e, se possível, desde quando acontece."></textarea>
+              <label for="reportFiles">Fotos ou vídeos (opcional)</label><input id="reportFiles" type="file" accept="image/*,video/*" multiple>
+              <small class="helper">Demonstração: os nomes dos arquivos serão registrados localmente; eles não são enviados para um servidor.</small>
+              <button class="primary-btn" type="submit">Enviar relato <span>→</span></button>
+            </form>
+            <section class="panel"><div class="panel-heading"><div><h2>Relatos registrados</h2><p>Dados de demonstração e registros deste navegador.</p></div><span class="count-pill" id="reportCount">0 relatos</span></div><div id="reportsList" class="report-list"></div></section>
+          </div>
+        </section>
+
+        <section class="page" id="page-futuro">
+          <div class="page-intro"><span class="eyebrow">SEU CAMINHO, SEU RITMO</span><h1>Meu Futuro</h1><p>Conte o que desperta sua curiosidade. Você receberá sugestões para explorar a área escolhida.</p></div>
+          <div class="two-col career-layout">
+            <form class="panel form-panel" id="careerForm"><h2>Monte seu plano de aprendizagem</h2>
+              <label for="careerArea">Área que mais combina comigo *</label><select id="careerArea" required><option value="">Escolha uma área</option><option value="musica">Música</option><option value="tecnologia">Tecnologia</option><option value="saude">Saúde</option><option value="educacao">Educação</option><option value="artes">Artes e design</option><option value="exatas">Ciências e matemática</option><option value="comunicacao">Comunicação</option><option value="esportes">Esportes</option><option value="meio-ambiente">Meio ambiente</option></select>
+              <label for="careerGoal">Profissão ou objetivo (opcional)</label><input id="careerGoal" maxlength="100" placeholder="Ex.: ser músico, produzir músicas">
+              <label for="careerStyle">Como você aprende melhor?</label><select id="careerStyle"><option value="pratica">Praticando e fazendo projetos</option><option value="visual">Com vídeos, imagens e mapas</option><option value="leitura">Lendo e fazendo anotações</option><option value="grupo">Conversando e estudando em grupo</option></select>
+              <label for="careerHours">Tempo que gostaria de dedicar por semana</label><select id="careerHours"><option>1–2 horas</option><option>3–4 horas</option><option>5 horas ou mais</option></select>
+              <button class="primary-btn" type="submit">Gerar meu plano <span>→</span></button>
+            </form>
+            <section class="panel plan-panel"><div class="plan-top"><span class="plan-icon">✦</span><div><span class="eyebrow">PLANO PERSONALIZADO</span><h2 id="planTitle">Seu futuro começa com curiosidade</h2></div></div><div id="planOutput" class="plan-output"><p>Selecione uma área ao lado para receber ideias de disciplinas, metodologias e uma primeira meta prática.</p><div class="empty-illustration">◎</div></div><p class="helper">As recomendações são sugestões educativas gerais. Converse com seus professores para adaptar o plano às suas necessidades e à sua realidade.</p></section>
+          </div>
+        </section>
+
+        <section class="page" id="page-apoio">
+          <div class="page-intro"><span class="eyebrow">ESCUTA E ACOLHIMENTO</span><h1>Direção e Psicólogo</h1><p>Solicite uma conversa para compartilhar sugestões, elogios, dificuldades ou pedir apoio.</p></div>
+          <div class="notice safety"><span>🔒</span><div><strong>Privacidade e cuidado</strong><p>Este protótipo não envia pedidos para profissionais reais. Em uma versão publicada, os dados deverão ser protegidos e vistos apenas por pessoas autorizadas. Se você estiver em perigo imediato, procure um adulto de confiança ou o serviço de emergência local.</p></div></div>
+          <div class="two-col">
+            <form class="panel form-panel" id="appointmentForm"><h2>Solicitar atendimento</h2>
+              <label for="appointmentType">Com quem deseja conversar? *</label><select id="appointmentType" required><option value="">Selecione</option><option>Direção escolar</option><option>Psicólogo(a) escolar</option><option>Coordenação pedagógica</option><option>Não sei / preciso de orientação</option></select>
+              <label for="appointmentReason">Assunto geral *</label><select id="appointmentReason" required><option value="">Selecione</option><option>Elogio ou sugestão</option><option>Problema escolar</option><option>Dificuldade nos estudos</option><option>Questão pessoal ou emocional</option><option>Outro assunto</option></select>
+              <label for="appointmentDate">Data preferida *</label><input id="appointmentDate" type="date" required>
+              <label for="appointmentTime">Período preferido *</label><select id="appointmentTime" required><option value="">Selecione</option><option>Manhã</option><option>Tarde</option><option>Qualquer período</option></select>
+              <label for="appointmentNote">Observação (opcional)</label><textarea id="appointmentNote" rows="3" maxlength="500" placeholder="Compartilhe apenas o necessário."></textarea>
+              <button class="primary-btn" type="submit">Registrar solicitação <span>→</span></button>
+            </form>
+            <section class="panel"><div class="panel-heading"><div><h2>Minhas solicitações</h2><p>Confira os pedidos feitos neste navegador.</p></div></div><div id="appointmentsList" class="mini-list"></div></section>
+          </div>
+        </section>
+
+        <section class="page" id="page-projetos">
+          <div class="page-intro"><span class="eyebrow">IDEIAS QUE VIRAM AÇÃO</span><h1>Projetos e eventos</h1><p>Compartilhe uma iniciativa e encontre caminhos para apresentá-la à comunidade.</p></div>
+          <div class="two-col">
+            <form class="panel form-panel" id="projectForm"><h2>Cadastrar um projeto</h2>
+              <label for="projectTitle">Nome do projeto *</label><input id="projectTitle" required maxlength="100" placeholder="Ex.: Horta sustentável na escola">
+              <label for="projectArea">Área do projeto *</label><select id="projectArea" required><option value="">Selecione</option><option>Ciência e tecnologia</option><option>Cultura e artes</option><option>Meio ambiente</option><option>Saúde e bem-estar</option><option>Inclusão e cidadania</option><option>Educação</option><option>Outro</option></select>
+              <label for="projectDescription">O que vocês querem desenvolver? *</label><textarea id="projectDescription" required rows="4" maxlength="1500" placeholder="Explique a ideia, o objetivo e quem ela pode ajudar."></textarea>
+              <label for="projectMembers">Integrantes (opcional)</label><input id="projectMembers" maxlength="200" placeholder="Nomes ou grupo, conforme as regras da escola">
+              <button class="primary-btn" type="submit">Cadastrar projeto <span>→</span></button>
+            </form>
+            <section class="panel"><div class="panel-heading"><div><h2>Projetos da comunidade</h2><p>Ideias cadastradas nesta demonstração.</p></div><span class="count-pill" id="projectCount">0 projetos</span></div><div id="projectsList" class="project-list"></div></section>
+          </div>
+          <section class="panel events-panel"><div class="panel-heading"><div><h2>Oportunidades para apresentar projetos</h2><p>Exemplos ilustrativos — confirme datas, inscrições e localização com os organizadores.</p></div></div><div class="event-list" id="eventsList"></div><p class="helper">Os eventos exibidos são exemplos para demonstrar a interface; não são anúncios verificados nem oportunidades confirmadas.</p></section>
+        </section>
+
+        <section class="page" id="page-professores">
+          <div class="page-intro"><span class="eyebrow">APRENDER EM COMUNIDADE</span><h1>Professores e conteúdos</h1><p>Espaço para materiais, atividades, avisos e orientações pedagógicas.</p></div>
+          <div class="notice"><span>📚</span><div><strong>Área demonstrativa</strong><p>Em uma instalação real, professores autenticados poderão publicar materiais e a escola poderá organizar conteúdos por turma e disciplina.</p></div></div>
+          <div class="two-col"><section class="panel"><h2>Conteúdos de exemplo</h2><div class="content-resource"><span class="resource-icon">📖</span><div><strong>Como organizar uma rotina de estudos</strong><p>Planejamento semanal, pausas e revisão espaçada.</p><small>Orientação pedagógica · Material demonstrativo</small></div></div><div class="content-resource"><span class="resource-icon">🎵</span><div><strong>Matemática e música: ritmo e frações</strong><p>Uma atividade interdisciplinar para explorar compassos.</p><small>Matemática / Artes · Material demonstrativo</small></div></div><div class="content-resource"><span class="resource-icon">🌱</span><div><strong>Projeto de sustentabilidade na escola</strong><p>Como observar um problema, pesquisar e propor soluções.</p><small>Ciências · Material demonstrativo</small></div></div></section>
+          <section class="panel form-panel"><h2>Espaço do professor</h2><p class="muted">Para testar a experiência, selecione o perfil no menu Meu perfil. Publicações reais exigem login institucional e servidor.</p><button class="secondary-btn" data-goto="perfil">Configurar perfil →</button></section></div>
+        </section>
+
+        <section class="page" id="page-perfil">
+          <div class="page-intro"><span class="eyebrow">SUA CONTA</span><h1>Meu perfil</h1><p>Personalize o nome e escolha um perfil para explorar a demonstração.</p></div>
+          <div class="two-col"><form class="panel form-panel" id="profileForm"><h2>Dados de demonstração</h2><label for="profileName">Nome para exibição *</label><input id="profileName" maxlength="80" required placeholder="Como devemos chamar você?"><label for="profileRole">Perfil</label><select id="profileRole"><option>Aluno</option><option>Professor</option><option>Direção</option><option>Psicólogo(a)</option></select><p class="helper">Não use senhas nem dados pessoais reais neste protótipo. A seleção de perfil é apenas visual e não protege dados.</p><button class="primary-btn" type="submit">Salvar preferências</button></form><section class="panel"><h2>O que muda em uma versão institucional?</h2><ul class="feature-list"><li>Login seguro e contas criadas pela escola.</li><li>Permissões diferentes para alunos, professores e gestão.</li><li>Fluxo de aprovação e acompanhamento de relatos.</li><li>Agenda real integrada à disponibilidade dos profissionais.</li><li>Armazenamento seguro de mídia e proteção de dados.</li></ul></section></div>
+        </section>
+
+        <footer class="footer"><span>Minha Escola © 2026</span><span>Protótipo local · Dados salvos apenas neste navegador</span></footer>
+      </div>
+    </main>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
